@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="WitchCard.Shop - Astrology services including Horoscope, Kundli, Past Life Reading, Compatibility with interactive scratch card reveal.">
+  <title>WitchCard.Shop — Astrology Insights</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1 class="neon">🔮 WitchCard.Shop</h1>
+  <h2 class="neon-sub">Discover Your Destiny</h2>
+</header>
+<main>
+  <section id="services" class="card">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card" data-service="horoscope" data-price="0">🆓 Free Horoscope</div>
+      <div class="service-card" data-service="kundli" data-price="20">📜 Kundli / Birth Chart</div>
+      <div class="service-card" data-service="past-life" data-price="20">⏳ Past Life Reading</div>
+      <div class="service-card" data-service="compatibility" data-price="20">❤️ Compatibility</div>
+    </div>
+  </section>
+
+  <section id="form-section" class="card" style="display:none;">
+    <h2>Fill your details</h2>
+    <form id="astroForm">
+      <label>Full name (optional)
+        <input type="text" name="name" placeholder="Name">
+      </label>
+      <label>Date of birth
+        <input type="date" name="dob" required>
+      </label>
+      <label>Time of birth
+        <input type="time" name="tob" required>
+      </label>
+      <label>Place of birth
+        <input type="text" name="place" placeholder="City, Country" required>
+      </label>
+      <label>Gender
+        <select name="gender">
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+      <button type="submit" id="proceedBtn">Proceed</button>
+    </form>
+  </section>
+
+  <section id="result-section" class="card" style="display:none;">
+    <h2>Reveal your reading</h2>
+    <div id="celebrate" style="position:relative;height:40px"></div>
+    <canvas id="scratchCanvas"></canvas>
+    <div class="actions">
+      <button id="shareResult">Share</button>
+      <button id="downloadResult">Download</button>
+    </div>
+  </section>
+
+  <footer class="card">
+    <p>&copy; WitchCard.Shop</p>
+    <p><a href="#policy">Privacy</a> · <a href="#terms">Terms</a> · <a href="#refund">Refund</a></p>
+  </footer>
+</main>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+// Configure this: set your backend URL here after deploying backend to Render
+const API_BASE = "%%API_BASE%%"; // e.g. https://witchcard-backend.onrender.com
+const RAZORPAY_KEY_ID = "%%RAZORPAY_KEY_ID%%"; // public key id (replace in deployment)
+</script>
+<script src="script.js"></script>
+</body>
+</html>
